@@ -1,0 +1,32 @@
+require:
+  - rubocop-rails
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/**/*'
+    - 'bin/**/*'
+    - 'log/**/*'
+    - 'tmp/**/*'
+    - 'app/views/**/*'
+    - 'config/environments/*'
+    - 'config/initializers/**/*.rb'
+  
+Style/BlockDelimiters:
+  Exclude:
+    - 'spec/**/*'
+
+Style:
+  Exclude:
+  - "**/db/migrate/**/*.rb"
+Style/Documentation:
+  Enabled: false
+Style/RegexpLiteral:
+  Description: Use %r for regular expressions matching more than `MaxSlashes` '/'
+    characters. Use %r only for regular expressions matching more than `MaxSlashes`
+    '/' character.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-r
+  Enabled: false
+
+Rails/RakeEnvironment:
+  Enabled: false
