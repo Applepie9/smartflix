@@ -1,8 +1,9 @@
 require:
   - rubocop-rails
+  - rubocop-rspec
 
 AllCops:
-  NewCops: enable
+  TargetRubyVersion: 3.0
   Exclude:
     - 'db/**/*'
     - 'bin/**/*'
@@ -11,6 +12,9 @@ AllCops:
     - 'app/views/**/*'
     - 'config/environments/*'
     - 'config/initializers/**/*.rb'
+  DisplayCopNames: true
+  StyleGuideCopsOnly: false
+  NewCops: enable
   
 Style/BlockDelimiters:
   Exclude:

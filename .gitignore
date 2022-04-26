@@ -88,3 +88,5 @@ db/*.sqlite3-journal
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+netflix_titles.csv

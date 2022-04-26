@@ -4,10 +4,16 @@ require 'rails_helper'
 
 RSpec.describe 'Index', type: :system do
   describe 'index page' do
-    it 'contains smartflix' do
+    it 'contains Smartflix' do
       get '/'
 
       expect(response.body).to include('Smartflix')
+    end
+
+    it 'contains movie titles' do
+      get '/'
+
+      expect(response.body).to include('Ganglands')
     end
   end
 end

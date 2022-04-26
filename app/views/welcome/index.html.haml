@@ -1,0 +1,11 @@
+%h1 Smartflix
+
+- @limit.times do |showid|
+  %h2 
+    #{@shows[showid][:title]} (#{@shows[showid][:release_year]})
+  %p 
+    = @shows[showid][:type]
+  %p 
+    = @shows[showid][:description]
+
+
