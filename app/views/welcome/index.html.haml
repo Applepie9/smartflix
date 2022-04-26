@@ -1,11 +1,11 @@
 %h1 Smartflix
 
-- @limit.times do |showid|
+- @shows.each do |show|
   %h2 
-    #{@shows[showid][:title]} (#{@shows[showid][:release_year]})
+    #{show[:title]} (#{show[:release_year]})
   %p 
-    = @shows[showid][:type]
+    = show[:type]
   %p 
-    = @shows[showid][:description]
+    = show[:description]
 
 

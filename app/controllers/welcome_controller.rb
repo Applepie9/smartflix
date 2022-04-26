@@ -4,8 +4,8 @@ require 'csv'
 
 class WelcomeController < ApplicationController
   def index
-    @shows ||= CSV.parse(File.read('netflix_titles.csv'), headers: true, header_converters: :symbol)
+    @shows = CSV.foreach('netflix_titles.csv', headers: true, header_converters: :symbol)
+                .take((params[:limit] || 10).to_i)
 
-    @limit = (params[:limit] || 10).to_i
   end
 end
