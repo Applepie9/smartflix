@@ -7,10 +7,13 @@ ruby                    '3.0.3'
 
 gem 'importmap-rails'
 gem 'jbuilder',         '~> 2.7'
+gem 'haml',             '~> 5.2'
 gem 'puma',             '~> 5.0'
-gem 'rails',            '~> 7.0.2', '>= 7.0.2.3'
+gem 'rails',            '~> 7.0.2'
 gem 'redis',            '~> 4.0'
 gem 'rubocop',          '~> 1.27'
+gem 'rubocop-rails',    require: false
+gem 'rubocop-rspec',    require: false
 gem 'sprockets-rails'
 gem 'sqlite3',          '~> 1.4'
 gem 'stimulus-rails'
