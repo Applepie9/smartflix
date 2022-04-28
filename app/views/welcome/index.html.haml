@@ -1,11 +1,18 @@
-%h1 Smartflix
-
-- @shows.each do |show|
-  %h2 
-    #{show[:title]} (#{show[:release_year]})
-  %p 
-    = show[:type]
-  %p 
-    = show[:description]
+.page
+  %h1 Smartflix
+  .subtext 
+    %p Find out more about your favourite movies.
+  .row.row-cols-1.row-cols-4.g-4.grid
+    - @shows.each do |show|
+      .col
+        .card{:style => 'width: 150px',}
+          %img{:src => '/placeholder150.png', :alt=>'placeholder image'} 
+          .card-body.showcard-body
+            .showcard-title
+              #{show[:title]} (#{show[:release_year]})
+            .showcard-type
+              = show[:type]
+            .card-text.showcard-text
+              = show[:description]
 
 

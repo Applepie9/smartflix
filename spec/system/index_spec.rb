@@ -14,15 +14,15 @@ RSpec.describe 'Index', type: :system do
     it 'shows default 10 titles' do
       get '/'
 
-      expect(response.body).to include('The Starling') #10th
-      expect(response.body).not_to include('Vendetta: Truth, Lies and The Mafia') #11th
+      expect(response.body).to include('The Starling') # 10th
+      expect(response.body).not_to include('Vendetta: Truth, Lies and The Mafia') # 11th
     end
 
     it 'shows only 3 titles' do
       get '/?limit=3'
 
-      expect(response.body).to include('Ganglands') #3rd
-      expect(response.body).not_to include('Jailbirds New Orleans') #4th
+      expect(response.body).to include('Ganglands') # 3rd
+      expect(response.body).not_to include('Jailbirds New Orleans') # 4th
     end
   end
 end
