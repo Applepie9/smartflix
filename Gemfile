@@ -19,7 +19,7 @@ gem 'sassc-rails'
 gem 'sprockets-rails'
 gem 'sqlite3',          '~> 1.4'
 gem 'stimulus-rails'
-gem 'turbo-rails'
+gem 'turbo-rails', '~> 1.0.0'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
