@@ -9,6 +9,7 @@ gem 'bootstrap',        '~> 5.1.3'
 gem 'haml',             '~> 5.2'
 gem 'importmap-rails'
 gem 'jbuilder',         '~> 2.7'
+gem 'pg',               '~> 1.3'
 gem 'puma',             '~> 5.0'
 gem 'rails',            '~> 7.0.2'
 gem 'redis',            '~> 4.0'
@@ -17,7 +18,6 @@ gem 'rubocop-rails',    require: false
 gem 'rubocop-rspec',    require: false
 gem 'sassc-rails'
 gem 'sprockets-rails'
-gem 'sqlite3',          '~> 1.4'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 
@@ -37,12 +37,7 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 group :development do
-  gem 'web-console',      '>= 4.1.0'
-
-  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "rack-mini-profiler"
-
-  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  gem 'web-console',       '>= 4.1.0'
   gem 'spring'
 end
 
@@ -52,8 +47,9 @@ group :test do
 end
 
 group :development, :test do
-  gem 'byebug', platform: :mri
+  gem 'byebug',             platform: :mri
   gem 'capybara'
+  gem 'database_cleaner-active_record'
   gem 'factory_bot_rails', '~> 6.2'
   gem 'rspec-rails',       '~> 5.1', '>= 5.1.1'
 end
