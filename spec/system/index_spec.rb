@@ -8,14 +8,13 @@ RSpec.describe 'Index', type: :system do
       get '/'
 
       expect(response.body).to include('Smartflix')
-      expect(response.body).to include('Dick Johnson Is Dead')
     end
 
-    it 'shows default 10 titles' do
+    it 'shows default 12 titles' do
       get '/'
 
-      expect(response.body).to include('The Starling') # 10th
-      expect(response.body).not_to include('Vendetta: Truth, Lies and The Mafia') # 11th
+      expect(response.body).to include('Bangkok Breaking') # 12th
+      expect(response.body).not_to include('Je Suis Karl') # 13rd
     end
 
     it 'shows only 3 titles' do

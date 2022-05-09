@@ -1,10 +1,11 @@
 # frozen_string_literal: true
 
-require 'csv'
-
 class WelcomeController < ApplicationController
+  include WelcomeHelper
+  
+  DEFAULT_LIMIT = 12
+
   def index
-    @shows = CSV.foreach('netflix_titles.csv', headers: true, header_converters: :symbol)
-                .take((params[:limit] || 12).to_i)
+    @shows = titles_csv_import.take((params[:limit] || DEFAULT_LIMIT).to_i)
   end
 end
