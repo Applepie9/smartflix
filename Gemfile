@@ -42,6 +42,7 @@ group :development do
 end
 
 group :test do
+  gem 'database_cleaner-active_record'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
@@ -49,7 +50,6 @@ end
 group :development, :test do
   gem 'byebug',             platform: :mri
   gem 'capybara'
-  gem 'database_cleaner-active_record'
   gem 'factory_bot_rails', '~> 6.2'
   gem 'rspec-rails',       '~> 5.1', '>= 5.1.1'
 end

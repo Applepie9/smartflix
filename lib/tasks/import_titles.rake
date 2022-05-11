@@ -12,18 +12,8 @@ private
 
 def shows_csv
   CSV.foreach('netflix_titles.csv', headers: true).map do |row|
-    {
-      show_type: row['type'],
-      title: row['title'],
-      director: row['director'],
-      cast: row['cast'],
-      country: row['country'],
-      date_added: row['date_added'],
-      release_year: row['release_year'],
-      rating: row['rating'],
-      duration: row['duration'],
-      listed_in: row['listed_in'],
-      description: row['description']
-    }
+    obj = row.to_h
+    obj[:show_type] = obj.delete('type')
+    obj
   end
 end

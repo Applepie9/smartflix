@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_05_134924) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_11_155450) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "shows", force: :cascade do |t|
-    t.string "show_type", null: false
     t.string "title", null: false
     t.string "director"
     t.text "cast"
@@ -28,6 +27,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_05_134924) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "show_type", default: 0, null: false
+    t.string "show_id", null: false
   end
 
 end
