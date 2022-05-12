@@ -7,7 +7,6 @@ RSpec.describe 'Index', type: :system do
     let(:shows) { create_list(:show, 15) }
 
     it 'contains Smartflix' do
-      shows
       get '/'
 
       expect(response.body).to include('Smartflix')
