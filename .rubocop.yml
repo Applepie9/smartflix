@@ -20,6 +20,12 @@ Style/BlockDelimiters:
   Exclude:
     - 'spec/**/*'
 
+Lint:
+  Exclude:
+  - "**/db/migrate/**/*.rb"
+Layout:
+  Exclude:
+  - "**/db/migrate/**/*.rb"
 Style:
   Exclude:
   - "**/db/migrate/**/*.rb"
@@ -32,5 +38,30 @@ Style/RegexpLiteral:
   StyleGuide: https://github.com/bbatsov/ruby-style-guide#percent-r
   Enabled: false
 
+RSpec:
+  Language:
+    Includes:
+      Examples:
+        - it_behaves_like
+        - it_should_behave_like
+        - include_examples
+        - it_raises_a_forbidden_error
+        - it_raises_a_not_authorized_error
+        - it_raises_a_not_found_error
+        - it_raises_a_validation_error
+        - it_raises_an_improper_request_options_error
+        - it_does_not_raise_an_error
+        - it_raises_error
+        - it_does_not_send_email
+        - it_does_not_create_letter
+
+RSpec/ImplicitExpect:
+  Enabled: true
+  EnforcedStyle: should
+  SupportedStyles:
+  - is_expected
+  - should
+
 Rails/RakeEnvironment:
   Enabled: false
+  

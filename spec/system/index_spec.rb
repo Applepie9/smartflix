@@ -4,28 +4,25 @@ require 'rails_helper'
 
 RSpec.describe 'Index', type: :system do
   describe 'index page' do
-    let(:shows) { create_list(:show, 15) }
+    before { create_list(:show, 15) }
 
     it 'contains Smartflix' do
       get '/'
 
       expect(response.body).to include('Smartflix')
+      expect(response.body).to include('Show_1')
     end
 
     it 'shows default 12 titles' do
-      shows
       get '/'
 
-      expect(response.body).to include('Show_12')
-      expect(response.body).not_to include('Show_13')
+      expect(response.body).to include('showcard-title').exactly(12).times
     end
 
     it 'shows only 3 titles' do
-      shows
       get '/?limit=3'
 
-      expect(response.body).to include('Show_3')
-      expect(response.body).not_to include('Show_4')
+      expect(response.body).to include('showcard-title').exactly(3).times
     end
   end
 end

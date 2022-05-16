@@ -3,31 +3,16 @@
 require 'rails_helper'
 
 RSpec.describe Show, type: :model do
-  describe 'show model' do
+  describe 'validations' do
+    subject { build(:show) }
 
-    it 'creates a valid show' do
-      show = create(:show)
-      expect(show).to be_valid
-    end
+    it { should validate_presence_of(:show_id) }
 
-    it 'has a title' do
-      show = described_class.new(title: nil)
-      expect(show).not_to be_valid
-    end
+    it { should validate_presence_of(:title) }
 
-    it 'has a release_year' do
-      show = described_class.new(release_year: nil)
-      expect(show).not_to be_valid
-    end
+    it { should validate_presence_of(:release_year) }
 
-    it 'has a show_type' do
-      show = described_class.new(show_type: nil)
-      expect(show).not_to be_valid
-    end
-
-    it 'has a show_id' do
-      show = described_class.new(show_id: nil)
-      expect(show).not_to be_valid
-    end
+    it { should validate_presence_of(:show_type) }
+    it { should define_enum_for(:show_type) }
   end
 end

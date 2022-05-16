@@ -2,6 +2,8 @@
 
 FactoryBot.define do
   factory :show do
+    sequence(:show_id) { |n| "s#{n}" }
+    traits_for_enum :show_type, ['Movie', 'TV Show']
     sequence(:title) { |n| "Show_#{n}" }
     director { 'MyText' }
     cast { 'MyText' }
@@ -12,7 +14,5 @@ FactoryBot.define do
     duration { 'MyString' }
     listed_in { 'MyText' }
     description { 'MyText' }
-    traits_for_enum :show_type, ['Movie', 'TV Show']
-    sequence(:show_id) { |n| "s#{n}" }
   end
 end

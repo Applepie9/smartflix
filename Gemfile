@@ -28,27 +28,28 @@ gem 'turbo-rails', '~> 1.0.0'
 # gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'tzinfo-data',        platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', require: false
+gem 'bootsnap',           require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
 group :development do
-  gem 'web-console',       '>= 4.1.0'
   gem 'spring'
+  gem 'web-console', '~> 4.2'
 end
 
 group :test do
   gem 'database_cleaner-active_record'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '~> 5.0'
   gem 'webdrivers'
 end
 
 group :development, :test do
-  gem 'byebug',             platform: :mri
+  gem 'byebug', platform: :mri
   gem 'capybara'
   gem 'factory_bot_rails', '~> 6.2'
   gem 'rspec-rails',       '~> 5.1', '>= 5.1.1'
