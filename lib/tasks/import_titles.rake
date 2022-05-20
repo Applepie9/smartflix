@@ -11,7 +11,7 @@ end
 private
 
 def shows_csv
-  CSV.foreach('netflix_titles.csv', headers: true).map do |row|
+  CSV.foreach('lib/assets/netflix_titles.csv', headers: true).map do |row|
     obj = row.to_h
     obj[:show_type] = obj.delete('type')
     obj

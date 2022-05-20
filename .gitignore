@@ -81,7 +81,6 @@ spec/test_files
 yarn-debug.log*
 .yarn-integrity
 
-netflix_titles.csv
 /public/packs
 /public/packs-test
 /node_modules
