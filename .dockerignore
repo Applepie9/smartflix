@@ -1,0 +1,12 @@
+Dockerfile*
+.dockerignore
+docker-compose.yml
+.bundle/
+log/
+tmp/
+.gitattributes
+.gitignore
+.git/
+node_modules
+/public/assets
+/config/master.key
